@@ -1,0 +1,27 @@
+{
+  "name": "Project-2",
+  "version": "1.0.0",
+  "description": "test",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server.js",
+    "lint": "eslint **/*.js --quiet",
+    "test": "npm run lint"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/drivelikejehu/Project-2.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/drivelikejehu/Project-2/issues"
+  },
+  "homepage": "https://github.com/drivelikejehu/Project-2#readme",
+  "dependencies": {
+    "eslint": "^6.8.0",
+    "mysql2": "^2.1.0"
+  },
+  "devDependencies": {}
+}
