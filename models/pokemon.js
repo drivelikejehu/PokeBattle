@@ -4,6 +4,15 @@ module.exports = function(sequelize, DataTypes) {
     type: DataTypes.STRING,
     image: DataTypes.STRING,
   });
+
+  Pokemon.belongsTo = function(models) {
+    Pokemon.belongsTo(models.User, {
+      foreignKey: {
+        allowNull: false
+      }
+    });
+  };
+
   return Pokemon;
 
 };
