@@ -1,13 +1,8 @@
 {
   "development": {
     "username": "root",
-<<<<<<< HEAD
     "password": "Dlareme44",
     "database": "pokemon_db",
-=======
-    "password": null,
-    "database": "database_development",
->>>>>>> c6e8dde272919fc85502e6adc785cccfcaa08135
     "host": "127.0.0.1",
     "dialect": "mysql",
     "operatorsAliases": false
