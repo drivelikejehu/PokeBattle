@@ -1,5 +1,5 @@
 {
-  "name": "pokebattle",
+  "name": "PokeBattle",
   "version": "1.0.0",
   "description": "test",
   "main": "index.js",
@@ -11,15 +11,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/drivelikejehu/Project-2.git"
+    "url": "git+https://github.com/drivelikejehu/PokeBattle.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/drivelikejehu/Project-2/issues"
+    "url": "https://github.com/drivelikejehu/PokeBattle/issues"
   },
-  "homepage": "https://github.com/drivelikejehu/Project-2#readme",
+  "homepage": "https://github.com/drivelikejehu/PokeBattle#readme",
   "dependencies": {
     "@handlebars/allow-prototype-access": "^1.0.3",
     "eslint": "^4.19.1",

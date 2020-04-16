@@ -1,11 +1,13 @@
 <h1>These are all the pokemon to loop through</h1>
 
 {{#each pokemons}}
-<h3>Name: {{dataValues.pokemonName}}</h3>
+<h3>Name: {{pokemonName}}</h3>
 <ul>
-    <li>ID: {{dataValues.id}}</li>
-    <li>Type: {{dataValues.type}}</li>
+    <li>ID: {{id}}</li>
+    <li>Type: {{type}}</li>
 
 </ul>
-<img src={{dataValues.image}} alt={{dataValues.pokemonName}} style="width: 10%">
+<img src={{image}} alt={{pokemonName}} style="width: 10%">
+{{!-- <a href="/users">Back to main</a> --}}
 {{/each}}
+<a href="/">Home</a>
