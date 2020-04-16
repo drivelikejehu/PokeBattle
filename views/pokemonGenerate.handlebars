@@ -4,10 +4,11 @@
 {{!-- Hardcode --}}
 
 <div class="card" style="width: 300px;">
+      {{#each pokemons}}
   <div class="card-divider">
+      {{dataValues.pokemonName}}
   </div>
-    {{#each pokemons}}
-   {{dataValues.pokemonName}}
+    
   <img src={{dataValues.image}} alt={{dataValues.pokemonName}} style="width: 10%" >
   <div class="card-section">
     <h4>{{dataValues.pokemonName}}</h4>
@@ -20,10 +21,12 @@
 </div>
 
 <div class="card" style="width: 300px;">
+     {{#each pokemons}}
   <div class="card-divider">
+      {{dataValues.pokemonName}}
   </div>
-    {{#each pokemons}}
-   {{dataValues.pokemonName}}
+    
+   
   <img src={{dataValues.image}} alt={{dataValues.pokemonName}} style="width: 10%" >
   <div class="card-section">
     <h4>{{dataValues.pokemonName}}</h4>
