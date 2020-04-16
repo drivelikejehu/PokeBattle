@@ -9,10 +9,10 @@
       "es6": true
     },
     "rules": {
-      "no-duplicate-case": "error",//disallow duplicate case labels
-      "no-empty": "error",//disallow empty block statements
-      "no-extra-semi": "error",//disallow unnecessary semicolons
-      "no-func-assign": "error",//disallow reassigning `function` declarations
+      "no-duplicate-case": "error",
+      "no-empty": "error",
+      "no-extra-semi": "error",
+      "no-func-assign": "error",
       "no-irregular-whitespace": "error",
       "no-unreachable": "error",
       "curly": "error",
@@ -31,7 +31,7 @@
       "brace-style": "error",
       "indent": ["error", 2],
       "linebreak-style": ["error", "unix"],
-      "quotes": ["error", "double"],//enforce the consistent use of either backticks, double, or single quotes
+      "quotes": ["error", "double"],
       "semi": ["error", "always"]
     }
   }
