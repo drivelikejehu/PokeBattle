@@ -1,3 +1,17 @@
+/* elements */
+
 h1 {
     color: red;
+}
+
+/* classes */
+.subnav-hero-section {
+background-color: #CC0000;
+}
+/* ids */
+
+#pokemon-image {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }

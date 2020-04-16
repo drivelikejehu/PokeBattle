@@ -17,9 +17,11 @@ app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
 
-const pokemonRoutes = require("./controllers/pokemonController.js");
+const pokemonGenerateRoutes = require("./controllers/pokemonGenerateController.js");
+const resultsRoutes = require("./controllers/resultsControllers.js");
 
-app.use(pokemonRoutes);
+app.use(pokemonGenerateRoutes);
+app.use(resultsRoutes);
 
 app.get("/", function (req, res) {
   res.render("index");
