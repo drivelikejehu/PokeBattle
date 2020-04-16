@@ -8,6 +8,7 @@ module.exports = function(sequelize, DataTypes) {
   Pokemon.belongsTo = function(models) {
     Pokemon.belongsTo(models.User, {
       foreignKey: {
+        // foreignKey: "userId",
         allowNull: false
       }
     });

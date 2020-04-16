@@ -1,5 +1,9 @@
 {
+<<<<<<< HEAD
   "name": "PokeBattle",
+=======
+  "name": "pokebattle",
+>>>>>>> 77ec4297b55a5879db0e897dea22616f64b63a1d
   "version": "1.0.0",
   "description": "test",
   "main": "index.js",
@@ -21,10 +25,13 @@
   },
   "homepage": "https://github.com/drivelikejehu/Project-2#readme",
   "dependencies": {
+<<<<<<< HEAD
+=======
+    "@handlebars/allow-prototype-access": "^1.0.3",
+>>>>>>> 77ec4297b55a5879db0e897dea22616f64b63a1d
     "eslint": "^4.19.1",
     "express": "^4.17.1",
     "express-handlebars": "^3.1.0",
-    "handlebars": "^4.7.6",
     "mysql2": "^2.1.0",
     "sequelize": "^5.21.6"
   },
