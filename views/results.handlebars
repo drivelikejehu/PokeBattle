@@ -1,10 +1,10 @@
 <h1>These are all the users to loop through</h1>
 <h1> Battle Results </h1>  {{!--inserted from results.html--}}
 <h3> The winner is:</h3> {{!--inserted from results.html--}}
-{{#each users}}
-<h3>Username: {{userName}}</h3>
+{{#each dataValues.users}}
+<h3>Username: {{dataValues.userName}}</h3>
 <ul>
-    <li>Pokémon: {{pokemonName}}</li>
+    <li>Pokémon: {{dataValues.pokemonName}}</li>
 </ul>
 <h6> Number of victories for winner: 1</h6> {{!--inserted from results.html--}}
 {{/each}}
