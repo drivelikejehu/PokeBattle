@@ -1,13 +1,53 @@
 <h1>Generate Pokemon</h1>
 
-{{#each pokemons}}
-<h3>Name: {{dataValues.pokemonName}}</h3>
-<ul>
+{{!-- create row to get this side by side --}}
+{{!-- Hardcode --}}
+
+<div class="card" style="width: 300px;">
+  <div class="card-divider">
+  </div>
+    {{#each pokemons}}
+   {{dataValues.pokemonName}}
+  <img src={{dataValues.image}} alt={{dataValues.pokemonName}} style="width: 10%" >
+  <div class="card-section">
+    <h4>{{dataValues.pokemonName}}</h4>
+    <ul>
     <li>ID: {{dataValues.id}}</li>
     <li>Type: {{dataValues.type}}</li>
+    </ul>
+    {{/each}}
+  </div>
+</div>
 
-</ul>
-<img src={{dataValues.image}} alt={{dataValues.pokemonName}} style="width: 10%">
+<div class="card" style="width: 300px;">
+  <div class="card-divider">
+  </div>
+    {{#each pokemons}}
+   {{dataValues.pokemonName}}
+  <img src={{dataValues.image}} alt={{dataValues.pokemonName}} style="width: 10%" >
+  <div class="card-section">
+    <h4>{{dataValues.pokemonName}}</h4>
+    <ul>
+    <li>ID: {{dataValues.id}}</li>
+    <li>Type: {{dataValues.type}}</li>
+    </ul>
+    {{/each}}
+  </div>
+</div>
+
+
 {{!-- <a href="/users">Back to main</a> --}}
-{{/each}}
-<a href="/">Home</a>
+
+<a href="/">Home</a> 
+
+
+{{!-- <div class="card" style="width: 300px;">
+  <div class="card-divider">
+    This is a header
+  </div>
+  <img src="assets/img/generic/rectangle-1.jpg">
+  <div class="card-section">
+    <h4>This is a card.</h4>
+    <p>It has an easy to override visual style, and is appropriately subdued.</p>
+  </div>
+</div> --}}
