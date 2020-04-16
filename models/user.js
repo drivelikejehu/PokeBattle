@@ -14,7 +14,6 @@ module.exports = function(sequelize, DataTypes) {
     User.hasMany(models.Pokemon, {
     });
   };
-
   return User;
 
 };
