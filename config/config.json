@@ -1,11 +1,7 @@
 {
   "development": {
     "username": "root",
-<<<<<<< HEAD
     "password": "root",
-=======
-    "password": "mysql5021",
->>>>>>> 45ea206150155867878f68a21d986f9a5aaea990
     "database": "pokemon_db",
     "host": "127.0.0.1",
     "dialect": "mysql",
@@ -20,11 +16,7 @@
     "operatorsAliases": false
   },
   "production": {
-    "username": "root",
-    "password": null,
-    "database": "database_production",
-    "host": "127.0.0.1",
     "dialect": "mysql",
-    "operatorsAliases": false
+    "use_env_variable": "JAWSDB_URL"
   }
 }
