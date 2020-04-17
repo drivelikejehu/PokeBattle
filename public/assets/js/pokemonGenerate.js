@@ -24,7 +24,7 @@ $(document).ready(function() {
   // on click function that saves input from user aka username
   function saveUserNameAndGeneratePokemon() {
     console.log($("#pokemonBallOne"));
-    $("#pokemonBallOne").on("click",function() {
+    $("#pokemonBallOne").on("submit",function() {
       var pokeBallOne = {
         userName: $("#inputUsernameOne").val()
       };
