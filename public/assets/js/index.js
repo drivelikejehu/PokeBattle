@@ -1,8 +1,10 @@
 $(document).ready(function() {
-  // console.log("Hello World!");
-  // $("#generate-second-page").on("click", function() {
-  //   location.assign("/pokemon");
-  // })
+  $(document).foundation();
+  console.log("Hello World!");
+  $("#generate-second-page").on("click", function() {
+    location.href = "/pokemon";
+    return false;
+  });
 
   //event listeners and ajax calls
 });
