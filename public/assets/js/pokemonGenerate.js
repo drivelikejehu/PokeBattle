@@ -4,12 +4,12 @@ $(document).ready(function() {
 
   function getCardSectionsToGeneratePokemon() {
     const generateCardSectionsOne = $(`<h4>Username</h4>
-  <input type="text">
-  <a href="/pokemon"><img alt="pokemon ball" src="/assets/img/pokemon-ball.png" id="generate-second-page"></img></a>`);
+  <input id="inputUsernameOne" type="text">
+  <a href="/pokemon"><img alt="pokemon ball" type="submit" src="/assets/img/pokemon-ball.png" id="pokemonBallOne"></img></a>`);
 
     const generateCardSectionsTwo = $(`<h4>Username</h4>
-  <input type="text">
-  <a href="/pokemon"><img alt="pokemon ball" src="/assets/img/pokemon-ball.png" id="generate-second-page"></img></a>`);
+  <input id="inputUsernameTwo" type="text">
+  <a href="/pokemon"><img alt="pokemon ball" type="submit" src="/assets/img/pokemon-ball.png" id="pokemonBallTwo"></img></a>`);
       //append to card-sections
     $("#card-user-One").append(generateCardSectionsOne);
     $("#card-user-Two").append(generateCardSectionsTwo);
@@ -19,6 +19,23 @@ $(document).ready(function() {
 });
 
 // on click function that saves input from user aka username
+$(function () {
+ 
+  $("#pokemonBallOne").on("submit", function(){
+    const pokeBallOne = {
+      userName: $("#inputUsernameOne").val()
+    };
+    console.log("here");
+    console.log(pokeBallOne);
+
+
+  });
+});
+
+
+
+
+
 //as well as randomly selects pokemon from ajax call math.random and
 //saves pokemon along with type and username in mysql
 
@@ -33,6 +50,3 @@ $(document).ready(function() {
 //what pokemon type beats what). *if type=type, then math.random to decide
 //user will be direced to results page which will display that user/pokemon that won
 //info will be saved to mysql(done in resultsController file)
-$(function () {
-  console.log("Hello World!");
-});
