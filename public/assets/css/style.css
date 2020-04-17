@@ -36,7 +36,12 @@ background-color: #CC0000;
     margin-right: auto;
     outline: none
 }
-
+#vs {
+  margin-top: 50%;
+  margin-left: 20%;
+  width: 65px;
+  height: 65px;
+}
 
 #generate-results-page {
     width: 50px;
