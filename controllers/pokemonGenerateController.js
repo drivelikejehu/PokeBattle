@@ -6,7 +6,7 @@ router.get("/pokemon", function (req, res) {
   db.Pokemon.findAll()
     .then((pokemons) => {
       console.log(pokemons);
-      res.render("all-pokemon", { pokemons });
+      res.render("pokemonGenerate", { pokemons });
     })
     .catch((err) => {
       console.log(err);
