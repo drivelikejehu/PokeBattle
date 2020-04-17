@@ -36,3 +36,19 @@ background-color: #CC0000;
     margin-right: auto;
     outline: none
 }
+
+
+#generate-results-page {
+    width: 50px;
+    height: 50px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#return-main {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 200px;
+}
