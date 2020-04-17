@@ -65,6 +65,4 @@ router.get("/api/pokemon/:id", function (req, res) {
       });
     });
 });
-
-
 module.exports = router;

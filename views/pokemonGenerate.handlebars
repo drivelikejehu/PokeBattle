@@ -1,76 +1,64 @@
-<header class="subnav-hero-section">
-  <h1 class="subnav-hero-headline"></h1>
-  <img id="pokemon-image" src="assets/img/pokelogo.png">
-  {{!-- <ul class="subnav-hero-subnav">
-  </ul> --}}
-</header>
-
-{{!-- create row to get this side by side --}}
-{{!-- Hardcode --}}
+{{!-- Container to generate pokemon --}}
+<br>
+<div class="grid-container">
+ <div class="row">
+  <div class="columns medium-6">
+    {{!-- Card 1 User Input --}}
+    <div class="card"> 
+        <div class="card-section" id="card-user-One">
+          
+        </div>
+    </div>      
+  </div>
+  <div class="columns medium-6">
+    {{!-- Card 2 User Input --}}
+    <div class="card">       
+        <div class="card-section" id="card-user-Two">
+         
+        </div>
+     </div>  
+  </div>
+</div>
+{{!-- br will be deleted --}}
+<br>
+{{!-- Container for generated pokemon- WILL PROBALY BE DELETED SINCE WE ONLY HAVE TO EMPTY CARD --}}
 <div class="grid-container">
 
-  <div class="grid-x grid-margin-x small-up-2 medium-up-3">
-    <div class="cell">
-      <div class="card">
-
+   <div class="row">
+  <div class="columns medium-6">
+    {{!-- Card 1 User Input --}}
+    <div class="card"> 
         <div class="card-section">
-          <h4>Username</h4>
-          <input type="text" {{dataValues.UserName}}>
-
+          <h4>You got: {{dataValues.pokemonName}}! </h4>
+          <img src= alt="pokemon">
         </div>
-      </div>
-    </div>
-    <div class="cell">
-      <div class="card">
-
-        <div class="card-section">
-          <h4>Username</h4>
-          <input type="text" {{dataValues.UserName}}>
-
-        </div>
-
-      </div>
-
-    </div>
+    </div>      
   </div>
-
-
-  <br>
-  <div class="grid-container">
-
-    <div class="grid-x grid-margin-x small-up-2 medium-up-3">
-      <div class="cell">
-        <div class="card">
-
-          <div class="card-section">
-            <h4>You got: {{dataValues.pokemonName}}! </h4>
-            <img src={{dataValues.image}}>
-
-
-          </div>
+  <div class="columns medium-6">
+    {{!-- Card 2 User Input --}}
+    <div class="card">       
+        <div class="card-section">
+          <h4>You got: {{dataValues.pokemonName}}! </h4>
+          <img src= alt="pokemon">
         </div>
-      </div>
-      <div class="cell">
-        <div class="card">
+     </div>  
+  </div>
+</div>
+{{!-- Onclick runs query to begin battle. Will only appear once both users have generated their respective pokemons --}}
+<a href=""><img alt="pokemon ball" src="/assets/img/pokemon-ball.png" id="generate-second-page"></img></a>
 
-          <div class="card-section">
-            <h4>You got: {{dataValues.pokemonName}}! </h4>
-            <img src={{dataValues.image}}>
+</div>
 
-          </div>
-        </div>
 
-      </div>
-    </div>
+<br>
 
-    <br>
 
-    <a href="/pokemon"><img alt="pokemon ball" src="/assets/img/pokemon-ball.png" id="generate-second-page"></img></a>
-
-    <script src="https://code.jquery.com/jquery.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/js/foundation.min.js"
-      integrity="sha256-pRF3zifJRA9jXGv++b06qwtSqX1byFQOLjqa2PTEb2o=" crossorigin="anonymous"></script>
-    {{!-- <div class="card" style="width: 300px;">
+ 
+        
+        
+        
+        
+        {{!-- <div class="card" style="width: 300px;">
       {{#each pokemons}}
   <div class="card-divider">
       {{dataValues.pokemonName}}
@@ -106,18 +94,5 @@
 </div> --}}
 
 
-    {{!-- <a href="/users">Back to main</a> --}}
-
-
-
-
-    {{!-- <div class="card" style="width: 300px;">
-  <div class="card-divider">
-    This is a header
-  </div>
-  <img src="assets/img/generic/rectangle-1.jpg">
-  <div class="card-section">
-    <h4>This is a card.</h4>
-    <p>It has an easy to override visual style, and is appropriately subdued.</p>
-  </div>
-</div> --}}
+  
+      

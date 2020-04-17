@@ -22,14 +22,15 @@ background-color: #CC0000;
 /* ids */
 
 #pokemon-image {
+    width: 30%;
     display: block;
     margin-left: auto;
     margin-right: auto;
 }
 
 #generate-second-page {
-    width: 100px;
-    height: 100px;
+    width: 50px;
+    height: 50px;
     display: block;
     margin-left: auto;
     margin-right: auto;
