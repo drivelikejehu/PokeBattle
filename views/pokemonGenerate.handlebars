@@ -1,34 +1,43 @@
-
-
-<h1>Generate Pokemon</h1>
+{{!-- <header class="subnav-hero-section">
+  <h1 class="subnav-hero-headline"></h1>
+ <img id="pokemon-image" src="assets/img/pokelogo.png"> --}}
+  {{!-- <ul class="subnav-hero-subnav">
+  </ul> --}}
+</header>
 
 {{!-- create row to get this side by side --}}
 {{!-- Hardcode --}}
-<div class="grid-container">
+<div class="container">
 
-  <div class="grid-x grid-margin-x small-up-2 medium-up-3">
-    <div class="cell">
+<div class="row">
+  <div class="columns medium-6">
+  {{!-- <div class="grid-x grid-margin-x small-up-2 medium-up-3"> --}}
+   
       <div class="card">
-        <img src="assets/img/generic/rectangle-1.jpg">
+        
         <div class="card-section">
           <h4>Username</h4>
-          <input type="text" {{dataValues.UserName}}>
+          <input type="text">
 
         </div>
       </div>
-    </div>
-    <div class="cell">
-      <div class="card">
-        <img src="assets/img/generic/rectangle-1.jpg">
-        <div class="card-section">
+    
+    
+</div>
+<div class="columns medium-6">
+      
+        <div class="card">
+        
+          <div class="card-section">
           <h4>Username</h4>
-          <input type="text" {{dataValues.UserName}}>
-
-        </div>
+          <input type="text">
+          </div>
 
       </div>
 
-    </div>
+    
+</div>
+
 </div>
 
 
@@ -38,20 +47,21 @@
       <div class="grid-x grid-margin-x small-up-2 medium-up-3">
         <div class="cell">
           <div class="card">
-            <img src="assets/img/generic/rectangle-1.jpg">
+            
             <div class="card-section">
-              <h4>Username</h4>
-              <input type="text" {{dataValues.UserName}}>
+              <h4>You got: {{dataValues.pokemonName}}! </h4>
+                <img src={{dataValues.image}}>
+              
 
             </div>
           </div>
         </div>
         <div class="cell">
           <div class="card">
-            <img src="assets/img/generic/rectangle-1.jpg">
+            
             <div class="card-section">
-              <h4>Username</h4>
-              <input type="text" {{dataValues.UserName}}>
+              <h4>You got: {{dataValues.pokemonName}}! </h4>
+                <img src={{dataValues.image}}>
 
             </div>
        </div>
@@ -61,7 +71,7 @@
 
         <br>
 
-
+ <a href="/pokemon"><img alt="pokemon ball" src="/assets/img/pokemon-ball.png" id="generate-second-page"></img></a>
         {{!-- <div class="card" style="width: 300px;">
       {{#each pokemons}}
   <div class="card-divider">
@@ -100,7 +110,7 @@
 
         {{!-- <a href="/users">Back to main</a> --}}
 
-        <a href="/">Home</a>
+        
 
 
         {{!-- <div class="card" style="width: 300px;">
