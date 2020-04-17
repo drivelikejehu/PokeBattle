@@ -3,11 +3,16 @@ $(document).ready(function() {
   console.log("Hello World!");
 
   function getCardSectionsToGeneratePokemon() {
-    const generateCardSections = $(`<h4>Username</h4>
+    const generateCardSectionsOne = $(`<h4>Username</h4>
+  <input type="text">
+  <a href="/pokemon"><img alt="pokemon ball" src="/assets/img/pokemon-ball.png" id="generate-second-page"></img></a>`);
+
+    const generateCardSectionsTwo = $(`<h4>Username</h4>
   <input type="text">
   <a href="/pokemon"><img alt="pokemon ball" src="/assets/img/pokemon-ball.png" id="generate-second-page"></img></a>`);
       //append to card-sections
-    $("#card-user").append(generateCardSections);
+    $("#card-user-One").append(generateCardSectionsOne);
+    $("#card-user-Two").append(generateCardSectionsTwo);
 
   }
   getCardSectionsToGeneratePokemon();
