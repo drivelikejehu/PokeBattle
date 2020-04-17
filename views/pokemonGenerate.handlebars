@@ -1,6 +1,6 @@
-{{!-- create row to get this side by side --}}
-{{!-- Hardcoded --}}
-<div class="container">
+{{!-- Container to generate pokemon --}}
+<br>
+<div class="grid-container">
  <div class="row">
   <div class="columns medium-6">
     {{!-- Card 1 User Input --}}
@@ -23,35 +23,32 @@
 </div>
 {{!-- br will be deleted --}}
 <br>
-
+{{!-- Container for generated pokemon --}}
 <div class="grid-container">
 
-      <div class="grid-x grid-margin-x small-up-2 medium-up-3">
-        <div class="cell">
-          <div class="card">
-            
-            <div class="card-section">
-              <h4>You got: {{dataValues.pokemonName}}! </h4>
-                <img src={{dataValues.image}}>
-              
-
-            </div>
-          </div>
+   <div class="row">
+  <div class="columns medium-6">
+    {{!-- Card 1 User Input --}}
+    <div class="card"> 
+        <div class="card-section">
+          <h4>You got: {{dataValues.pokemonName}}! </h4>
+          <img src={{dataValues.image}} alt="pokemon">
         </div>
-        <div class="cell">
-          <div class="card">
-            
-            <div class="card-section">
-              <h4>You got: {{dataValues.pokemonName}}! </h4>
-                <img src={{dataValues.image}}>
-
-            </div>
-       </div>
-
-    </div>
+    </div>      
+  </div>
+  <div class="columns medium-6">
+    {{!-- Card 2 User Input --}}
+    <div class="card">       
+        <div class="card-section">
+          <h4>You got: {{dataValues.pokemonName}}! </h4>
+          <img src={{dataValues.image}} alt="pokemon">
+        </div>
+     </div>  
+  </div>
 </div>
 
-        <br>
+
+<br>
 
  <a href="/pokemon"><img alt="pokemon ball" src="/assets/img/pokemon-ball.png" id="generate-second-page"></img></a>
         {{!-- <div class="card" style="width: 300px;">
