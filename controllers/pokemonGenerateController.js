@@ -2,6 +2,7 @@ const express = require("express");
 const router = express.Router();
 const db = require("../models");
 
+
 router.get("/pokemon", function (req, res) {
   db.Pokemon.findAll()
     .then((pokemons) => {
@@ -49,16 +50,22 @@ router.get("/pokemon", function (req, res) {
 
 
 // eslint-disable-next-line no-unused-vars
-router.post("/api/pokemon", function(req, res) {
-  db.Pokemon.insertOne([
-    "userName"
-  ], [
-    req.body.userName
-  ], function(res) {
-    console.log(res);
-  });
+router.post("/api/user", function(req, res) {
+  const newUser = {
+    userName: req.body.userName,
+  };
+  db.User.create(newUser)
+    .then((newUser) => {
+      console.log(newUser);
+      res.json({
+        message: "Successfully created new user",
+        success: true,
+      });
+    })
+    .catch((err) => {
+      console.log(err);
+    });
 });
-
 
 
 // router.get("/api/pokemon/:id", function (req, res) {
