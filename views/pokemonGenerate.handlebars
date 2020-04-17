@@ -1,6 +1,6 @@
 <header class="subnav-hero-section">
   <h1 class="subnav-hero-headline"></h1>
- <img id="pokemon-image" src="assets/img/pokelogo.png">
+  <img id="pokemon-image" src="assets/img/pokelogo.png">
   {{!-- <ul class="subnav-hero-subnav">
   </ul> --}}
 </header>
@@ -12,7 +12,7 @@
   <div class="grid-x grid-margin-x small-up-2 medium-up-3">
     <div class="cell">
       <div class="card">
-        
+
         <div class="card-section">
           <h4>Username</h4>
           <input type="text" {{dataValues.UserName}}>
@@ -22,7 +22,7 @@
     </div>
     <div class="cell">
       <div class="card">
-        
+
         <div class="card-section">
           <h4>Username</h4>
           <input type="text" {{dataValues.UserName}}>
@@ -32,41 +32,45 @@
       </div>
 
     </div>
-</div>
+  </div>
 
 
-    <br>
-<div class="grid-container">
+  <br>
+  <div class="grid-container">
 
-      <div class="grid-x grid-margin-x small-up-2 medium-up-3">
-        <div class="cell">
-          <div class="card">
-            
-            <div class="card-section">
-              <h4>You got: {{dataValues.pokemonName}}! </h4>
-                <img src={{dataValues.image}}>
-              
+    <div class="grid-x grid-margin-x small-up-2 medium-up-3">
+      <div class="cell">
+        <div class="card">
 
-            </div>
+          <div class="card-section">
+            <h4>You got: {{dataValues.pokemonName}}! </h4>
+            <img src={{dataValues.image}}>
+
+
           </div>
         </div>
-        <div class="cell">
-          <div class="card">
-            
-            <div class="card-section">
-              <h4>You got: {{dataValues.pokemonName}}! </h4>
-                <img src={{dataValues.image}}>
+      </div>
+      <div class="cell">
+        <div class="card">
 
-            </div>
-       </div>
+          <div class="card-section">
+            <h4>You got: {{dataValues.pokemonName}}! </h4>
+            <img src={{dataValues.image}}>
 
+          </div>
+        </div>
+
+      </div>
     </div>
-</div>
 
-        <br>
+    <br>
 
- <a href="/pokemon"><img alt="pokemon ball" src="/assets/img/pokemon-ball.png" id="generate-second-page"></img></a>
-        {{!-- <div class="card" style="width: 300px;">
+    <a href="/pokemon"><img alt="pokemon ball" src="/assets/img/pokemon-ball.png" id="generate-second-page"></img></a>
+
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/js/foundation.min.js"
+      integrity="sha256-pRF3zifJRA9jXGv++b06qwtSqX1byFQOLjqa2PTEb2o=" crossorigin="anonymous"></script>
+    {{!-- <div class="card" style="width: 300px;">
       {{#each pokemons}}
   <div class="card-divider">
       {{dataValues.pokemonName}}
@@ -102,12 +106,12 @@
 </div> --}}
 
 
-        {{!-- <a href="/users">Back to main</a> --}}
-
-        
+    {{!-- <a href="/users">Back to main</a> --}}
 
 
-        {{!-- <div class="card" style="width: 300px;">
+
+
+    {{!-- <div class="card" style="width: 300px;">
   <div class="card-divider">
     This is a header
   </div>

@@ -1,13 +1,24 @@
 /* elements */
 
-h1 {
+/* h1 {
     color: red;
-}
+} */
 
 /* classes */
 .subnav-hero-section {
 background-color: #CC0000;
-}
+  }
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+  }
+
+.indexpng {
+    width: 7%;
+  }
 /* ids */
 
 #pokemon-image {
@@ -22,4 +33,5 @@ background-color: #CC0000;
     display: block;
     margin-left: auto;
     margin-right: auto;
+    outline: none
 }
