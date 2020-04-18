@@ -1,7 +1,7 @@
-$(document).ready(function () {
+$(document).ready(() => {
   $(document).foundation();
   console.log("Hello World!");
-  $("#generate-second-page").on("click", function () {
+  $("#pokeball").on("click", () => {
     location.href = "/pokemon";
     return false;
   });
