@@ -5,5 +5,4 @@ $(document).ready(() => {
     location.href = "/pokemon";
     return false;
   });
-  //event listeners and ajax calls
 });

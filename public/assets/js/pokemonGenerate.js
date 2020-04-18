@@ -1,86 +1,110 @@
 //upon page load- first containers will dynamically generate
-$(document).ready(function () {
+
+var userOneset = false;
+var userTwoset = false;
+
+$(document).ready(function() {
   console.log("Hello World!");
 
-  function getCardSections() {
-    const generateCardOne = $(`<h4>Username</h4>
+  function getCardSectionsToGeneratePokemon() {
+    const generateCardSectionsOne = $(`<h4>Player 1:</h4>
     <div class="form">
-  <input id="inputUsernameOne" type="text" name="pokeUserNameOne" placeholder="Enter Trainer Name"> </div>
-  <img alt="pokemon ball" src="/assets/img/pokemon-ball.png" class="pokeBall" id="pokemonBallOne">
+  <input id="input-userOne" type="text" name="pokeUserNameOne"> </div>
+  <img alt="pokemon ball" type="button" src="/assets/img/pokemon-ball.png" class="pokeBall" id="userOne"></img>
   `);
-    const generateCardTwo = $(`<h4>Username</h4>
+    const generateCardSectionsTwo = $(`<h4>Player 2:</h4>
     <div class="form">
-  <input id="inputUsernameTwo" type="text" name="pokeUserNameTwo" placeholder="Enter Trainer Name"> </div>
-  <img alt="pokemon ball" src="/assets/img/pokemon-ball.png" class="pokeBall" id="pokemonBallTwo">
+  <input id="input-userTwo" type="text" name="pokeUserNameTwo"> </div>
+  <img alt="pokemon ball" type="button" src="/assets/img/pokemon-ball.png" class="pokeBall" id="userTwo"></img>
   `);
-    //append to card-sections
-    $("#card-user-One").append(generateCardOne);
-    $("#card-user-Two").append(generateCardTwo);
+      //append to card-sections
+    $("#card-userOne").append(generateCardSectionsOne);
+    $("#card-userTwo").append(generateCardSectionsTwo);
+
   }
-  getCardSections();
 
-  // on click function that saves input from user aka username
 
-  $("#pokemonBallOne").on("click", () => {
-    // const pokeBallOne = {
-    //   userName: $("#inputUsernameOne").val(),
-    // };
+  function postUser(pokeBall) {
+    $.ajax("/api/user", {
+      type: "POST",
+      data: pokeBall
+    }).then(
+      function(){
+        console.log("done!");
+      }
+    );
+  }
 
-    // var pokeID = "1";
-    const queryURL = "https://pokeapi.co/api/v2/pokemon?limit=151";
+  function saveAndgeneratePokemon(user) {
+    console.log(user);
+    username = $("#input-" + user).val();
+    console.log(username);
+    var randomNum = Math.floor(Math.random() * 150) + 1;
+    console.log(randomNum);
+    let pokeSearch = `https://pokeapi.co/api/v2/pokemon/${randomNum}`;
+    console.log(pokeSearch);
 
     $.ajax({
-      url: queryURL,
-      method: "GET",
-    }).then((response) => {
-      const pokeName = response.results[0].name;
-      // console.log(pokeName);
-      const pokeQuery = response.results[0].url;
-      // console.log(pokeQuery);
+      url: pokeSearch,
+      method: "GET"
+    }).then(function(response) {
+      var pokeBall = {
+        userName: username,
+        pokemonName: response.name,
+        xp: response.base_experience,
+        image: response.sprites.front_shiny
+      };
 
-      $.ajax({
-        url: pokeQuery,
-        method: "GET",
-      }).then((res) => {
-        console.log(res);
-        console.log(res.id);
-        const pokePng = res.sprites.front_default;
+      postUser(pokeBall);
+      $("#card-" + user).empty();
 
-        const generatePokeCardOne = $(`<h4>${pokeName}</h4>
-    <div class="form">
-  <img alt="pokemon ball" src="${pokePng}" class="pokeBall" id="pokemonBallOne">
-  `);
+      const userPokemon = `<h1>${pokeBall.pokemonName}</h1><img src=${pokeBall.image} ></img>`;
 
-        $("#card-user-One").append(generatePokeCardOne);
-      });
+      $("#card-" + user).append(userPokemon);
+
+
     });
-  });
+
+  }
+
+
+  getCardSectionsToGeneratePokemon();
+  // on click function that saves input from user aka username
+  function saveUserNameAndGeneratePokemon() {
+
+
+    $("#userOne").on("click",function() {
+      saveAndgeneratePokemon(this.id);
+      userOneset = true;
+    });
+
+    $("#userTwo").on("click",function() {
+      saveAndgeneratePokemon(this.id);
+      userTwoset = true;
+    });
+
+    $("#goResultsPage").on("click",function() {
+      if (userOneset && userTwoset) {
+        window.location.replace("/results"); 
+      } else {
+        const selectText = "<h1>MUST SELECT A POKEMON</h1>";
+        $("#submit-block").append(selectText);
+
+      }
+    });
+
+  }
+
+  saveUserNameAndGeneratePokemon();
 });
 
-// function saveUserNameAndGeneratePokemon() {
-//   console.log($("#pokemonBallOne"));
-//   $("#pokemonBallOne").on("click", function () {
-//     var pokeBallOne = {
-//       userName: $("#inputUsernameOne").val(),
-//     };
-//     console.log(pokeBallOne);
-//     $.ajax("/api/user", {
-//       type: "POST",
-//       data: pokeBallOne,
-//     }).then(function () {
-//       console.log("done!");
-//     });
-//   });
-// }
-// saveUserNameAndGeneratePokemon();
-// });
 
-//as well as randomly selects pokemon from ajax call math.random and
+
 //saves pokemon along with type and username in mysql
-
-//this ^^ will be done twice & seperatly. One for user 1 and one for user 2
 //upon the click that generates and saves user/pokemon info, card will empty by card id
 //and a 'You got ${pokemon}!' with type and picture of pokemon will be dynamically created
+//this ^^ will be done twice & seperatly. One for user 1 and one for user 2
+
 
 //write conditional that checks both users have generated a pokemon
 //if both users have generated a pokemon/info saved,
