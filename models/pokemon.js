@@ -1,7 +1,7 @@
 module.exports = function(sequelize, DataTypes) {
   var Pokemon = sequelize.define("Pokemon", {
     pokemonName: DataTypes.STRING,
-    type: DataTypes.STRING,
+    xp: DataTypes.INTEGER,
     image: DataTypes.STRING,
   });
 
