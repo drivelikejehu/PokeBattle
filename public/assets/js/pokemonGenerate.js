@@ -3,12 +3,12 @@ $(document).ready(function() {
   console.log("Hello World!");
 
   function getCardSectionsToGeneratePokemon() {
-    const generateCardSectionsOne = $(`<h4>Username</h4>
+    const generateCardSectionsOne = $(`<h4>Player 1:</h4>
     <div class="form">
   <input id="inputUsernameOne" type="text" name="pokeUserNameOne"> </div>
   <img alt="pokemon ball" type="button" src="/assets/img/pokemon-ball.png" class="pokeBall" id="pokemonBallOne"></img>
   `);
-    const generateCardSectionsTwo = $(`<h4>Username</h4>
+    const generateCardSectionsTwo = $(`<h4>Player 2:</h4>
     <div class="form">
   <input id="inputUsernameTwo" type="text" name="pokeUserNameTwo"> </div>
   <img alt="pokemon ball" type="button" src="/assets/img/pokemon-ball.png" class="pokeBall" id="pokemonBallOne"></img>
@@ -19,24 +19,43 @@ $(document).ready(function() {
 
   }
   getCardSectionsToGeneratePokemon();
-
-
   // on click function that saves input from user aka username
   function saveUserNameAndGeneratePokemon() {
-    console.log($("#pokemonBallOne"));
+
+  
+
     $("#pokemonBallOne").on("click",function() {
-      var pokeBallOne = {
-        userName: $("#inputUsernameOne").val()
-      };
-      console.log(pokeBallOne);
-      $.ajax("/api/user", {
-        type: "POST",
-        data: pokeBallOne
-      }).then(
-        function(){
-          console.log("done!");
-        }
-      );
+
+      var randomNum = Math.floor(Math.random() * 150) + 1;
+      console.log(randomNum);
+      let pokeSearch = `https://pokeapi.co/api/v2/pokemon/${randomNum}`;
+      console.log(pokeSearch);
+
+      $.ajax({
+        url: pokeSearch,
+        method: "GET"
+      }).then(function(response) {  
+        var pokeBallOne = {
+          userName: $("#inputUsernameOne").val(),
+          pokemonName: response.name,
+          xp: response.base_experience,
+          image: response.sprites.front_shiny
+        };
+
+        $.ajax("/api/user", {
+          type: "POST",
+          data: pokeBallOne
+        }).then(
+          function(){
+            console.log("done!");
+  
+  
+          }
+        );
+        // postPokemon(pokeBallOne);
+    
+      });
+
     });
 
   }
@@ -45,12 +64,11 @@ $(document).ready(function() {
 
 
 
-//as well as randomly selects pokemon from ajax call math.random and
 //saves pokemon along with type and username in mysql
-
-//this ^^ will be done twice & seperatly. One for user 1 and one for user 2
 //upon the click that generates and saves user/pokemon info, card will empty by card id
 //and a 'You got ${pokemon}!' with type and picture of pokemon will be dynamically created
+//this ^^ will be done twice & seperatly. One for user 1 and one for user 2
+
 
 //write conditional that checks both users have generated a pokemon
 //if both users have generated a pokemon/info saved,

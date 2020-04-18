@@ -18,12 +18,31 @@ router.get("/pokemon", function (req, res) {
     });
 });
 
+// router.get("/api/user", function (req, res) {
+//   console.log("why am I getting");
+//   db.Pokemon.findAll()
+//     .then((pokemons) => {
+//       console.log(pokemons);
+//     })
+//     .catch((err) => {
+//       console.log(err);
+//       res.status(500);
+//       res.json({
+//         error: true,
+//       });
+//     });
+// });
+
+
 
 
 // route for on click function that saves input from user aka username
 router.post("/api/user", function(req, res) {
   const newUser = {
     userName: req.body.userName,
+    pokemonName:req.body.pokemonName,
+    xp: req.body.xp,
+    image:req.body.image
   };
   db.User.create(newUser)
     .then((newUser) => {
@@ -37,6 +56,25 @@ router.post("/api/user", function(req, res) {
       console.log(err);
     });
 });
+
+// router.post("/api/pokemon", function(req, res) {
+//   const newPokemon = {
+//     pokemonName: req.body.pokemonName,
+//     xp: req.body.xp,
+//     image: req.body.image,
+//   };
+//   db.User.create(newPokemon)
+//     .then((newPokemon) => {
+//       console.log(newPokemon);
+//       res.json({
+//         message: "Successfully created new user",
+//         success: true,
+//       });
+//     })
+//     .catch((err) => {
+//       console.log(err);
+//     });
+// });
 
 
 
