@@ -18,25 +18,6 @@ router.get("/pokemon", function (req, res) {
     });
 });
 
-// router.get("/api/user", function (req, res) {
-//   console.log("why am I getting");
-//   db.Pokemon.findAll()
-//     .then((pokemons) => {
-//       console.log(pokemons);
-//     })
-//     .catch((err) => {
-//       console.log(err);
-//       res.status(500);
-//       res.json({
-//         error: true,
-//       });
-//     });
-// });
-
-
-
-
-// route for on click function that saves input from user aka username
 router.post("/api/user", function(req, res) {
   const newUser = {
     userName: req.body.userName,
