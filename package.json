@@ -8,7 +8,6 @@
     "lint": "eslint **/*.js --quiet",
     "test": "npm run lint",
     "dev": "nodemon server.js"
-
   },
   "repository": {
     "type": "git",
