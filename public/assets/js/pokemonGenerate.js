@@ -4,35 +4,44 @@ $(document).ready(function() {
 
   function getCardSectionsToGeneratePokemon() {
     const generateCardSectionsOne = $(`<h4>Username</h4>
-  <input id="inputUsernameOne" type="text">
-  <a href="/pokemon"><img alt="pokemon ball" type="submit" src="/assets/img/pokemon-ball.png" id="pokemonBallOne"></img></a>`);
-
+    <div class="form">
+  <input id="inputUsernameOne" type="text" name="pokeUserNameOne"> </div>
+  <img alt="pokemon ball" type="button" src="/assets/img/pokemon-ball.png" class="pokeBall" id="pokemonBallOne"></img>
+  `);
     const generateCardSectionsTwo = $(`<h4>Username</h4>
-  <input id="inputUsernameTwo" type="text">
-  <a href="/pokemon"><img alt="pokemon ball" type="submit" src="/assets/img/pokemon-ball.png" id="pokemonBallTwo"></img></a>`);
+    <div class="form">
+  <input id="inputUsernameTwo" type="text" name="pokeUserNameTwo"> </div>
+  <img alt="pokemon ball" type="button" src="/assets/img/pokemon-ball.png" class="pokeBall" id="pokemonBallOne"></img>
+  `);
       //append to card-sections
     $("#card-user-One").append(generateCardSectionsOne);
     $("#card-user-Two").append(generateCardSectionsTwo);
 
   }
   getCardSectionsToGeneratePokemon();
+
+
+  // on click function that saves input from user aka username
+  function saveUserNameAndGeneratePokemon() {
+    console.log($("#pokemonBallOne"));
+    $("#pokemonBallOne").on("click",function() {
+      var pokeBallOne = {
+        userName: $("#inputUsernameOne").val()
+      };
+      console.log(pokeBallOne);
+      $.ajax("/api/user", {
+        type: "POST",
+        data: pokeBallOne
+      }).then(
+        function(){
+          console.log("done!");
+        }
+      );
+    });
+
+  }
+  saveUserNameAndGeneratePokemon();
 });
-
-// on click function that saves input from user aka username
-$(function () {
- 
-  $("#pokemonBallOne").on("submit", function(){
-    const pokeBallOne = {
-      userName: $("#inputUsernameOne").val()
-    };
-    console.log("here");
-    console.log(pokeBallOne);
-
-
-  });
-});
-
-
 
 
 
