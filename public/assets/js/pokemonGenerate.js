@@ -1,64 +1,94 @@
 //upon page load- first containers will dynamically generate
+
+var userOneset = false;
+var userTwoset = false;
+
 $(document).ready(function() {
   console.log("Hello World!");
 
   function getCardSectionsToGeneratePokemon() {
     const generateCardSectionsOne = $(`<h4>Player 1:</h4>
     <div class="form">
-  <input id="inputUsernameOne" type="text" name="pokeUserNameOne"> </div>
+  <input id="inputpokemonBallOne" type="text" name="pokeUserNameOne"> </div>
   <img alt="pokemon ball" type="button" src="/assets/img/pokemon-ball.png" class="pokeBall" id="pokemonBallOne"></img>
   `);
     const generateCardSectionsTwo = $(`<h4>Player 2:</h4>
     <div class="form">
-  <input id="inputUsernameTwo" type="text" name="pokeUserNameTwo"> </div>
-  <img alt="pokemon ball" type="button" src="/assets/img/pokemon-ball.png" class="pokeBall" id="pokemonBallOne"></img>
+  <input id="inputpokemonBallTwo" type="text" name="pokeUserNameTwo"> </div>
+  <img alt="pokemon ball" type="button" src="/assets/img/pokemon-ball.png" class="pokeBall" id="pokemonBallTwo"></img>
   `);
       //append to card-sections
     $("#card-user-One").append(generateCardSectionsOne);
     $("#card-user-Two").append(generateCardSectionsTwo);
 
   }
+
+
+  function postUser(pokeBall) {
+    $.ajax("/api/user", {
+      type: "POST",
+      data: pokeBall
+    }).then(
+      function(){
+        console.log("done!");
+      }
+    );
+  }
+
+  function saveAndgeneratePokemon(username) {
+    var randomNum = Math.floor(Math.random() * 150) + 1;
+    console.log(randomNum);
+    let pokeSearch = `https://pokeapi.co/api/v2/pokemon/${randomNum}`;
+    console.log(pokeSearch);
+
+    $.ajax({
+      url: pokeSearch,
+      method: "GET"
+    }).then(function(response) {
+      var pokeBallOne = {
+        userName: username,
+        pokemonName: response.name,
+        xp: response.base_experience,
+        image: response.sprites.front_shiny
+      };
+
+      postUser(pokeBallOne);
+    });
+
+  }
+
+
   getCardSectionsToGeneratePokemon();
   // on click function that saves input from user aka username
   function saveUserNameAndGeneratePokemon() {
 
-  
 
     $("#pokemonBallOne").on("click",function() {
+      saveAndgeneratePokemon($("#input" + this.id).val());
+      userOneset = true;
 
-      var randomNum = Math.floor(Math.random() * 150) + 1;
-      console.log(randomNum);
-      let pokeSearch = `https://pokeapi.co/api/v2/pokemon/${randomNum}`;
-      console.log(pokeSearch);
-
-      $.ajax({
-        url: pokeSearch,
-        method: "GET"
-      }).then(function(response) {  
-        var pokeBallOne = {
-          userName: $("#inputUsernameOne").val(),
-          pokemonName: response.name,
-          xp: response.base_experience,
-          image: response.sprites.front_shiny
-        };
-
-        $.ajax("/api/user", {
-          type: "POST",
-          data: pokeBallOne
-        }).then(
-          function(){
-            console.log("done!");
-  
-  
-          }
-        );
-        // postPokemon(pokeBallOne);
-    
-      });
+      $( "#card-user-One" ).empty();
 
     });
 
+    $("#pokemonBallTwo").on("click",function() {
+      saveAndgeneratePokemon($("#input" + this.id).val());
+      userTwoset = true;
+      $( "#card-user-Two" ).empty();
+      
+    });
+
   }
+
+
+
+
+
+
+
+
+
+
   saveUserNameAndGeneratePokemon();
 });
 
