@@ -1,8 +1,8 @@
 {{!-- <h1 align="center">These are all the users to loop through</h1> --}}
 <h1 align="center"> Battle Results </h1>  {{!--inserted from results.html--}}
 <h3 align="center"> The winner is:</h3> {{!--inserted from results.html--}}
-{{#each dataValues.users}}
-<h3 align="center">Username: {{dataValues.userName}}</h3>
+<h3 align="center" id="winnerName">Username: {{dataValues.userName}}</h3>
+{{#each User.dataValues}}
 <ul align="center">
     <li>Pokémon: {{dataValues.pokemonName}}</li>
 </ul>
