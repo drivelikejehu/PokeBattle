@@ -17,21 +17,6 @@ router.get("/pokemon", function (req, res) {
     });
 });
 
-// router.get("/users", function (req, res) {
-//   db.User.findAll()
-//     .then((pokemons) => {
-//       console.log(pokemons);
-//       res.render("all-users", { users });
-//     })
-//     .catch((err) => {
-//       console.log(err);
-//       res.status(500);
-//       res.json({
-//         error: true,
-//       });
-//     });
-// });
-
 router.get("/api/pokemon", function (req, res) {
   db.Pokemon.findAll()
     .then((pokemons) => {
