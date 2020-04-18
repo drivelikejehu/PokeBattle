@@ -2,7 +2,7 @@
 <br>
 <div class="grid-container">
  <div class="row">
-  <div class="columns medium-6">
+  <div class="columns medium-5">
     {{!-- Card 1 User Input --}}
     <div class="card"> 
         <div class="card-section" id="card-user-One">
@@ -10,7 +10,10 @@
         </div>
     </div>      
   </div>
-  <div class="columns medium-6">
+  <div class="columns medium-2">
+    <img id="vs"src="/assets/img/Vs-image.png"></img>
+  </div>
+  <div class="columns medium-5">
     {{!-- Card 2 User Input --}}
     <div class="card">       
         <div class="card-section" id="card-user-Two">
@@ -21,40 +24,11 @@
 </div>
 {{!-- br will be deleted --}}
 <br>
-{{!-- Container for generated pokemon- WILL PROBALY BE DELETED SINCE WE ONLY HAVE TO EMPTY CARD --}}
-<div class="grid-container">
-
-   <div class="row">
-  <div class="columns medium-6">
-    {{!-- Card 1 User Input --}}
-    <div class="card"> 
-        <div class="card-section">
-          <h4>You got: {{dataValues.pokemonName}}! </h4>
-          <img src= alt="pokemon">
-        </div>
-    </div>      
-  </div>
-  <div class="columns medium-6">
-    {{!-- Card 2 User Input --}}
-    <div class="card">       
-        <div class="card-section">
-          <h4>You got: {{dataValues.pokemonName}}! </h4>
-          <img src= alt="pokemon">
-        </div>
-     </div>  
-  </div>
-</div>
-{{!-- Onclick runs query to begin battle. Will only appear once both users have generated their respective pokemons --}}
-
-</div>
-
-
-<br>
 
 
         <br>
 
- <a href="/results"><img alt="pokemon ball" src="/assets/img/pokemon-ball.png" id="generate-results-page"></img></a> 
+ <a href="/results"><img alt="pokemon ball" src="/assets/img/pokemon-ball.png" class="pokeBall"></img></a> 
         {{!-- <div class="card" style="width: 300px;">
       {{#each pokemons}}
   <div class="card-divider">
