@@ -1,7 +1,11 @@
 {
   "development": {
     "username": "root",
+<<<<<<< HEAD
     "password": "root",
+=======
+    "password": "root1049",
+>>>>>>> 4a206d7cb4d30bc6c5ffdb5415c4942ee35c69f0
     "database": "pokemon_db",
     "host": "127.0.0.1",
     "dialect": "mysql",
