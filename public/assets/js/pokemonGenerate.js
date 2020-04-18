@@ -9,17 +9,17 @@ $(document).ready(function() {
   function getCardSectionsToGeneratePokemon() {
     const generateCardSectionsOne = $(`<h4>Player 1:</h4>
     <div class="form">
-  <input id="inputpokemonBallOne" type="text" name="pokeUserNameOne"> </div>
-  <img alt="pokemon ball" type="button" src="/assets/img/pokemon-ball.png" class="pokeBall" id="pokemonBallOne"></img>
+  <input id="input-userOne" type="text" name="pokeUserNameOne"> </div>
+  <img alt="pokemon ball" type="button" src="/assets/img/pokemon-ball.png" class="pokeBall" id="userOne"></img>
   `);
     const generateCardSectionsTwo = $(`<h4>Player 2:</h4>
     <div class="form">
-  <input id="inputpokemonBallTwo" type="text" name="pokeUserNameTwo"> </div>
-  <img alt="pokemon ball" type="button" src="/assets/img/pokemon-ball.png" class="pokeBall" id="pokemonBallTwo"></img>
+  <input id="input-userTwo" type="text" name="pokeUserNameTwo"> </div>
+  <img alt="pokemon ball" type="button" src="/assets/img/pokemon-ball.png" class="pokeBall" id="userTwo"></img>
   `);
       //append to card-sections
-    $("#card-user-One").append(generateCardSectionsOne);
-    $("#card-user-Two").append(generateCardSectionsTwo);
+    $("#card-userOne").append(generateCardSectionsOne);
+    $("#card-userTwo").append(generateCardSectionsTwo);
 
   }
 
@@ -35,7 +35,10 @@ $(document).ready(function() {
     );
   }
 
-  function saveAndgeneratePokemon(username) {
+  function saveAndgeneratePokemon(user) {
+    console.log(user);
+    username = $("#input-" + user).val();
+    console.log(username);
     var randomNum = Math.floor(Math.random() * 150) + 1;
     console.log(randomNum);
     let pokeSearch = `https://pokeapi.co/api/v2/pokemon/${randomNum}`;
@@ -45,14 +48,21 @@ $(document).ready(function() {
       url: pokeSearch,
       method: "GET"
     }).then(function(response) {
-      var pokeBallOne = {
+      var pokeBall = {
         userName: username,
         pokemonName: response.name,
         xp: response.base_experience,
         image: response.sprites.front_shiny
       };
 
-      postUser(pokeBallOne);
+      postUser(pokeBall);
+      $("#card-" + user).empty();
+
+      const userPokemon = `<h1>${pokeBall.pokemonName}</h1><img src=${pokeBall.image} ></img>`;
+
+      $("#card-" + user).append(userPokemon);
+
+
     });
 
   }
@@ -63,19 +73,24 @@ $(document).ready(function() {
   function saveUserNameAndGeneratePokemon() {
 
 
-    $("#pokemonBallOne").on("click",function() {
-      saveAndgeneratePokemon($("#input" + this.id).val());
+    $("#userOne").on("click",function() {
+      saveAndgeneratePokemon(this.id);
       userOneset = true;
-
-      $( "#card-user-One" ).empty();
-
     });
 
-    $("#pokemonBallTwo").on("click",function() {
-      saveAndgeneratePokemon($("#input" + this.id).val());
+    $("#userTwo").on("click",function() {
+      saveAndgeneratePokemon(this.id);
       userTwoset = true;
-      $( "#card-user-Two" ).empty();
-      
+    });
+
+    $("#goResultsPage").on("click",function() {
+      if (userOneset && userTwoset) {
+        window.location.replace("/results"); 
+      } else {
+        const selectText = `<h1>MUST SELECT A POKEMON</h1>`;
+        $("#submit-block").append(selectText);
+
+      }
     });
 
   }
