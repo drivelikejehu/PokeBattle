@@ -87,7 +87,7 @@ $(document).ready(function() {
       if (userOneset && userTwoset) {
         window.location.replace("/results"); 
       } else {
-        const selectText = `<h1>MUST SELECT A POKEMON</h1>`;
+        const selectText ="<h1>MUST SELECT A POKEMON</h1>";
         $("#submit-block").append(selectText);
 
       }
@@ -95,18 +95,8 @@ $(document).ready(function() {
 
   }
 
-
-
-
-
-
-
-
-
-
   saveUserNameAndGeneratePokemon();
 });
-
 
 
 //saves pokemon along with type and username in mysql
