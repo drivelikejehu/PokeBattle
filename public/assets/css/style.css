@@ -6,35 +6,39 @@
 
 /* classes */
 .subnav-hero-section {
-background-color: #CC0000;
-  }
+  background-color: #cc0000;
+}
 
 .center {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 50%;
-  }
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
 
 .indexpng {
-    width: 7%;
-  }
+  width: 7%;
+}
 /* ids */
 
 #pokemon-image {
-    width: 30%;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
+  width: 30%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
+#generate-div {
+  background-image: url(/assets/img/forest.jpg);
+  
+}
 #generate-second-page {
-    width: 50px;
-    height: 50px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    outline: none
+  width: 50px;
+  height: 50px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  outline: none;
 }
 #vs {
   margin-top: 50%;
@@ -44,20 +48,23 @@ background-color: #CC0000;
 }
 
 .pokeBall {
-    width: 50px;
-    height: 50px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
+  width: 50px;
+  height: 50px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 #return-main {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 200px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 200px;
 }
-.grid-container {
-  background-image: src"battle.jpeg";
+#card-section {
+  background-color: darkblue;
+}
+/* .grid-container {
+  background-image: image-set("/img/battle.jpg"); 
 
-}
+} */
