@@ -1,9 +1,10 @@
 //upon page load- first containers will dynamically generate
 var userOneset = false;
 var userTwoset = false;
+var firstInput = true;
+var firstPokeball;
 
 $(document).ready(function() {
-  console.log("Hello World!");
 
   function getCardSectionsToGeneratePokemon() {
     const generateCardSectionsOne = $(`<h4>Player 1:</h4>
@@ -52,14 +53,24 @@ $(document).ready(function() {
         pokemonName: response.name,
         xp: response.base_experience,
         image: response.sprites.front_shiny,
-        // winner: 0
+        winner: false
       };
 
       // pokeBall.winnner= true;
+      if(firstInput) {
+        firstInput = false;
+        firstPokeball = pokeBall;
+        console.log(firstPokeball);
+      } else {
 
+        firstPokeball.xp > pokeBall.xp ? (firstPokeball.winner = true) : pokeBall.winner = true;
+
+        postUser(firstPokeball);
+        postUser(pokeBall);
+
+      }
 
       //card will empty by card id
-      postUser(pokeBall);
       $("#card-" + user).empty();
       //pokemon each user got will be dynamically created and appeneded yo card
       const userPokemon = `<h1>${pokeBall.pokemonName}</h1><img src=${pokeBall.image} ></img>`;
@@ -88,9 +99,9 @@ $(document).ready(function() {
     $("#goResultsPage").on("click",function() {
       // conditional that checks both users have generated a pokemon
       if (userOneset && userTwoset) {
-        window.location.replace("/results"); 
+        window.location.replace("/results");
       } else {
-        const selectText = $(`<h1>MUST SELECT A POKEMON</h1>`);
+        const selectText = $("<h1>MUST SELECT A POKEMON</h1>");
         $("#submit-block").append(selectText);
 
       }

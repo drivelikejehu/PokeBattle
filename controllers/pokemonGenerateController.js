@@ -43,7 +43,7 @@ router.post("/api/user", function(req, res) {
     pokemonName:req.body.pokemonName,
     xp: req.body.xp,
     image:req.body.image,
-    // winner:req.body.winner
+    winner:req.body.winner
   };
   db.User.create(newUser)
     .then((newUser) => {
