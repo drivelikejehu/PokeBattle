@@ -1,17 +1,14 @@
 {{!-- <h1 align="center">These are all the users to loop through</h1> --}}
 <h1 align="center"> Battle Results </h1>  {{!--inserted from results.html--}}
-<h3 align="center"> The winner is:</h3> {{!--inserted from results.html--}}
-<h3 align="center" id="winnerName">Username: {{dataValues.userName}}</h3>
-{{#each User.dataValues}}
-<ul align="center">
-    <li>Pokémon: {{dataValues.pokemonName}}</li>
-</ul>
-<h6 align="center"> Number of victories for winner: 1</h6> {{!--inserted from results.html--}}
-{{/each}}
+ {{!--inserted from results.html--}}
+
+<h3 align="center" id="userWhoWon">Username: </h3>
+<h3 align="center" id="winningPokemon"> The winner is:</h3>
+<h3 align="center" id="userHighScore"></h3>
+
+
+
 
 <a href="/" align="center" id="return-main"><img alt="pokemon ball" src="/assets/img/pokemon-ball.png" class="pokeBall"></img></a>
 
-{{!-- <h1> Battle Participants </h1>
-        <h3> List of Trainers currently in the battle:</h3>
-        <h5> Trainer 1 (chosen Pokemon)</h5>
-        <h5> Trainer 2 (chosen Pokemon)</h5> --}}
+<script src="/assets/js/results.js"></script>
