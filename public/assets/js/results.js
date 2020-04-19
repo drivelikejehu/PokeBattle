@@ -4,15 +4,26 @@
 //table to display all users and win/loss
 $(document).ready(function() {
 
-  function getLastTwoUsers() {
-    $.ajax("/battle", {
-      type: "GET",
-    }).then(
-      function(){
-        console.log("done!");
-      }
+  function getLastWinner() {
+    $.ajax({
+      method: "GET",
+      url: "/battle"
+    }).done(result =>{
+      console.log(result);
+
+      $("#userWhoWon").append(result[0].userName);
+
+      const pokemonImage = $(`
+    <img  src="${result[0].image}"></img>
+    `);
+
+      $("#winningPokemon").append(pokemonImage);
+
+
+    }
     );
   }
-  getLastTwoUsers();
+
+  getLastWinner();
 
 });

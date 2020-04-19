@@ -20,6 +20,7 @@ router.get("/results", function (req, res) {
     db.User.findAll({
       limit: 2,
       where: {
+        winner: true
       },
       order: [ [ "createdAt", "DESC" ]]
     })

@@ -63,7 +63,7 @@ $(document).ready(function() {
         console.log(firstPokeball);
       } else {
 
-        firstPokeball.xp > pokeBall.xp ? (firstPokeball.winner = true) : pokeBall.winner = true;
+        firstPokeball.xp > pokeBall.xp ? firstPokeball.winner = true : pokeBall.winner = true;
 
         postUser(firstPokeball);
         postUser(pokeBall);
