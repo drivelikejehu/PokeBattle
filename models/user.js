@@ -4,6 +4,8 @@ module.exports = function(sequelize, DataTypes) {
     pokemonName: DataTypes.STRING,
     xp: DataTypes.INTEGER,
     image: DataTypes.STRING,
+    wins: DataTypes.INTEGER,
+    losses: DataTypes.INTEGER,
   });
   User.associate = function(models) {
     User.hasMany(models.Pokemon, {
