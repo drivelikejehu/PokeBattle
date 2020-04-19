@@ -23,7 +23,8 @@ router.post("/api/user", function(req, res) {
     userName: req.body.userName,
     pokemonName:req.body.pokemonName,
     xp: req.body.xp,
-    image:req.body.image
+    image:req.body.image,
+    winner:req.body.winner
   };
   db.User.create(newUser)
     .then((newUser) => {
