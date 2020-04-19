@@ -4,6 +4,20 @@
 //table to display all users and win/loss
 $(document).ready(function() {
 
+  function getHighScore(userName) {
+    $.ajax({
+      method: "GET",
+      url: "/highscore?name=" + userName
+
+    }).then(result =>{
+
+      console.log(result);
+      console.log(result.count);
+      $("#userHighScore").append(userName + " has won " + result.count + " times!");
+
+    }
+    );
+  }
   function getLastWinner() {
     $.ajax({
       method: "GET",
@@ -12,17 +26,17 @@ $(document).ready(function() {
       console.log(result);
 
       $("#userWhoWon").append(result[0].userName);
-
       const pokemonImage = $(`
     <img  src="${result[0].image}"></img>
     `);
-
       $("#winningPokemon").append(pokemonImage);
 
+      getHighScore(result[0].userName);
 
     }
     );
   }
+
 
   getLastWinner();
 
