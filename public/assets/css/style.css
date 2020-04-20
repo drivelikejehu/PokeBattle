@@ -1,13 +1,30 @@
 /* elements */
+body {
+  margin: 0;
+  background-image: url(https://hdwallpaperim.com/wp-content/uploads/2017/08/31/151036-GameBoy-green-748x397.jpg);
+  background-size: contain;
+}
 
-/* h1 {
-    color: red;
-} */
+h1 {
+  font-family: 'Press Start 2P', serif;
+}
+
+h2 {
+  font-family: 'Press Start 2P', serif;
+}
+
+h3 {
+  font-family: 'Press Start 2P', serif;
+}
+
+h4 {
+  font-family: 'Press Start 2P', serif;
+}
 
 /* classes */
 .subnav-hero-section {
-  background-color: #cc0000;
-}
+background-color: darkslategray;
+  }
 
 .center {
   display: block;
@@ -43,7 +60,7 @@
 #vs {
   margin-top: 50%;
   margin-left: 20%;
-  width: 65px;
+  width: 85px;
   height: 65px;
 }
 
