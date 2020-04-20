@@ -13,25 +13,26 @@ Our team built this project to bring friends together. With the help of [Pokémo
 We used HTML/CSS for the front end, with the Foundation framework and Handlebars templates. For the backend we implemented Node.js, Express, MySql, and Sequelize, and deployed using Heroku. 
 
 In creating this application, we learned about trials and tribulations of full-stack web development. This was our first experience using Sequelize to connect to our databases, as well honing our skills in navigating the Model View Controller paradigm.
-#
-## User Story
 
+## User Story
+#
 AS a friend, I want to quickly settle a dispute with another friend
 
 I WANT to use pokemon to battle my friend's pokémon
 
 SO THAT we can resolve our conflict
 
-#
 
 ## Usage 
-
-Please head to [PokéBattle](http://) for battle.
-
 #
+Please head to [PokéBattle](https://ancient-bayou-34435.herokuapp.com/) for battle.
+#
+## Screenshot
+#
+![gif](public/assets/img/pokeanimate.gif)
 
 ## Credits
-
+#
 Team Tech Sorcery:
 
 [Devin Carr](https://github.com/D3viii)
@@ -49,5 +50,5 @@ Team Tech Sorcery:
 🏆 This source code is available to everyone under the standard [MIT license](https://github.com/microsoft/vscode/blob/master/LICENSE.txt).
 
 ## Project Status
-
+#
 We are currently slowing down development to focus on other endeavours. If you would like to contribute, please contact any member of [Team Tech Sorcery](#credits).
