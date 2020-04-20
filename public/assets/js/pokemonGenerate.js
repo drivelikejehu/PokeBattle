@@ -73,7 +73,7 @@ $(document).ready(function() {
       //card will empty by card id
       $("#card-" + user).empty();
       //pokemon each user got will be dynamically created and appeneded yo card
-      const userPokemon = `<h1>${pokeBall.pokemonName}</h1><img src=${pokeBall.image} ></img>`;
+      const userPokemon = `<h3>${pokeBall.pokemonName}</h3><img src=${pokeBall.image} ></img>`;
       $("#card-" + user).append(userPokemon);
 
 
