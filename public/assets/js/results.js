@@ -29,7 +29,9 @@ $(document).ready(function() {
       const pokemonImage = $(`
     <img  src="${result[0].image}"></img>
     `);
-      $("#winningPokemon").append(pokemonImage);
+      $("#winningPokemon").append(pokemonImage); 
+      
+      $("#winningPokemon").append(result[0].pokemonName);
 
       getHighScore(result[0].userName);
 
