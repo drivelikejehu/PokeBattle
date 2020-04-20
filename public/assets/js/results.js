@@ -27,7 +27,7 @@ $(document).ready(function() {
 
       $("#userWhoWon").append(result[0].userName);
       const pokemonImage = $(`
-    <img  src="${result[0].image}"></img>
+    <img src="${result[0].image}"></img>
     `);
       $("#winningPokemon").append(pokemonImage); 
       
