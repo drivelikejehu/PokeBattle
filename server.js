@@ -1,12 +1,14 @@
 const express = require("express");
+const compression = require("compression");
 const PORT = process.env.PORT || 8080;
 const app = express();
 
-
 const db = require("./models");
 
+app.use(compression());
+
 app.use(express.static("dist"));
-app.use(express.static("public"));
+// app.use(express.static("public"));
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
