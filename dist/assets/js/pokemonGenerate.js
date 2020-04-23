@@ -1,0 +1,9 @@
+var firstPokeball,userOneset=!1,userTwoset=!1,firstInput=!0;$(document).ready(function(){function a(a){$.ajax("/api/user",{type:"POST",data:a}).then(function(){console.log("done!")})}function b(b){console.log(b),username=$("#input-"+b).val(),console.log(username);var c=Math.floor(150*Math.random())+1;console.log(c);let d=`https://pokeapi.co/api/v2/pokemon/${c}`;console.log(d),$.ajax({url:d,method:"GET"}).then(function(c){var d={userName:username,pokemonName:c.name,xp:c.base_experience,image:c.sprites.front_shiny,winner:!1};firstInput?(firstInput=!1,firstPokeball=d,console.log(firstPokeball)):(firstPokeball.xp>d.xp?firstPokeball.winner=!0:d.winner=!0,a(firstPokeball),a(d)),$("#card-"+b).empty();const e=`<h3>${d.pokemonName}</h3><img src=${d.image} ></img>`;$("#card-"+b).append(e)})}(function(){const a=$(`<h4>Player 1:</h4>
+    <div class="form">
+  <input id="input-userOne" type="text" name="pokeUserNameOne"> </div>
+  <img alt="pokemon ball" type="button" src="/assets/img/pokemon-ball.png" class="pokeBall" id="userOne"></img>
+  `),b=$(`<h4>Player 2:</h4>
+    <div class="form">
+  <input id="input-userTwo" type="text" name="pokeUserNameTwo"> </div>
+  <img alt="pokemon ball" type="button" src="/assets/img/pokemon-ball.png" class="pokeBall" id="userTwo"></img>
+  `);$("#card-userOne").append(a),$("#card-userTwo").append(b)})(),function(){$("#userOne").on("click",function(){b(this.id),userOneset=!0}),$("#userTwo").on("click",function(){b(this.id),userTwoset=!0}),$("#goResultsPage").on("click",function(){if(userOneset&&userTwoset)window.location.replace("/results");else{const a=$("<h1>MUST SELECT A POKEMON</h1>");$("#submit-block").append(a)}})}()});
