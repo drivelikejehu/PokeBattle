@@ -1,5 +1,7 @@
 # PokéBattle: Project 2
 
+[PokéBattle](https://ancient-bayou-34435.herokuapp.com/)
+
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 ![badmath](https://travis-ci.org/boennemann/badges.svg?branch=master)
 [![Dependencies](https://david-dm.org/mozilla/openbadges-backpack.svg)](https://david-dm.org/mozilla/openbadges-backpack)
@@ -22,11 +24,6 @@ I WANT to use pokemon to battle my friend's pokémon
 
 SO THAT we can resolve our conflict
 
-
-## Usage 
-#
-Please head to [PokéBattle](https://ancient-bayou-34435.herokuapp.com/) for battle.
-#
 ## Screenshot
 #
 ![gif](public/assets/img/pokeanimate.gif)
