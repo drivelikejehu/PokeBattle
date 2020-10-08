@@ -8,11 +8,7 @@
 #
 Welcome all trainers! Have you ever had a dispute between friends end in disaster? From calling 'shotgun' in the parking lot to the last slice of pizza, PokéBattle is for you! 
 
-Our team built this project to bring friends together. With the help of [Pokémon API](https://pokeapi.co/), we created a modern-day pokémon equivalent to the coin toss. After consulting the rules and the pokémon chart, users can start battle. Both trainers enter their username and generate a pokémon each. The application will generate a winner and display the wins. 
-
-We used HTML/CSS for the front end, with the Foundation framework and Handlebars templates. For the backend we implemented Node.js, Express, MySql, and Sequelize, and deployed using Heroku. 
-
-In creating this application, we learned about trials and tribulations of full-stack web development. This was our first experience using Sequelize to connect to our databases, as well honing our skills in navigating the Model View Controller paradigm.
+Our team built this project to bring friends together. With the help of [Pokémon API](https://pokeapi.co/), we created a modern-day pokémon equivalent to the coin toss. After consulting the rules and the pokémon chart, users can start battle. Both trainers enter their username and generate a pokémon each. The application will generate a winner and display the wins. Technologies include Foundation, Handlebars, Node.js, Express, MySql, and Sequelize, and Heroku for deployment. 
 
 ## User Story
 #
