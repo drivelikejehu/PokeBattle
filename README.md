@@ -1,4 +1,4 @@
-# PokéBattle: Project 2
+# PokéBattle
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 ![badmath](https://travis-ci.org/boennemann/badges.svg?branch=master)
